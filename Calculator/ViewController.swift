@@ -20,20 +20,7 @@ class ViewController: UIViewController {
         case multiply
         case divide
     }
-    func caltue(a:Float,b:Float,c:operation) -> Float {
-        if plus ==  {
-            add 1 and 2
-        }
-        if mius == {
-            muis 1 and 2
-        }
-        if multpiy == {
-            muptipy 1 and 2
-        }
-        if divide == {
-            divide 1 and 2
-        }
-    }
+    
     @IBOutlet weak var label: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -147,15 +134,18 @@ class ViewController: UIViewController {
             break
         }
     }
-
-
-
-
-
-
-
-
-
+    
+    func caltue(a:Float,b:Float,c:operation) -> Float {
+        if c == .plus {
+            return a + b
+        } else if c == .minus{
+            return a - b
+        } else if c == .multiply {
+            return a * b
+        } else {
+            return a / b
+        }
+    }
 
 }
     
