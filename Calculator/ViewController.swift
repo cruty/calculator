@@ -10,8 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var result: Float = 0.0
-    
+    var a: Float = 0.0
+    var b: Float = 0.0
     var action: operation?
     
     enum operation {
@@ -99,8 +99,12 @@ class ViewController: UIViewController {
         self.minusButtonSelected = false
         self.plusButtonSelected = false
         self.dividebuttonSelected = false
+        
+        self.action = nil
     }
     @IBAction func tap1Cbutton(_ sender: Any) {
+        
+        
         if label.text == "0" {
             label.text = "1"
         } else {
@@ -186,6 +190,10 @@ class ViewController: UIViewController {
         self.minusButtonSelected = false
         self.plusButtonSelected = false
         self.dividebuttonSelected = true
+        
+        self.action = .divide
+        self.a = Float(self.label.text!)!
+        self.label.text = "0"
     }
     
     @IBAction func multiptleaction(_ sender: Any) {
@@ -193,6 +201,10 @@ class ViewController: UIViewController {
         self.minusButtonSelected = false
         self.dividebuttonSelected = false
         self.multipiybuttonSelected = true
+        
+        self.action = .multiply
+        self.a = Float(self.label.text!)!
+        self.label.text = "0"
     }
     
     @IBAction func minusaction(_ sender: Any) {
@@ -200,6 +212,10 @@ class ViewController: UIViewController {
         self.minusButtonSelected = true
         self.dividebuttonSelected = false
         self.multipiybuttonSelected = false
+        
+        self.action = .minus
+        self.a = Float(self.label.text!)!
+        self.label.text = "0"
   
     }
     
@@ -208,29 +224,27 @@ class ViewController: UIViewController {
         self.minusButtonSelected = false
         self.dividebuttonSelected = false
         self.multipiybuttonSelected = false
+        
+        self.action = .plus
+        self.a = Float(self.label.text!)!
+        self.label.text = "0"
     }
     
     @IBAction func equalaction(_ sender: Any) {
-//        switch action! {
-//        case .plus:
-//            label.text = "\(result + Float(label.text!)!)"
-//        default:
-//            break
-//        }
+        label.text = "\(calculate(a: self.a, b: Float(self.label.text!)!, c: self.action!))"
     }
     
-    func calculate(a:Float,b:Float,c:operation) -> Float {
+    func calculate(a:Float,b:Float,c:operation) -> Int {
         if c == .plus {
-            return a + b
+            return Int(a + b)
         } else if c == .minus{
-            return a - b
+            return Int(a - b)
         } else if c == .multiply {
-            return a * b
+            return Int(a * b)
         } else {
-            return a / b
+            return Int(a / b)
         }
     }
-
 }
     
         
