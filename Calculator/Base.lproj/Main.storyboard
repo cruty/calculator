@@ -270,6 +270,9 @@
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                 <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                                 <state key="normal" title="+"/>
+                                                <state key="selected">
+                                                    <color key="titleColor" red="1" green="0.58461426549999995" blue="0.098865015360000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="36"/>
@@ -354,7 +357,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="dividebutton" destination="7RB-QA-ab3" id="og1-0W-eC4"/>
                         <outlet property="label" destination="TXp-ap-wQk" id="FLx-uE-xva"/>
+                        <outlet property="minusbutton" destination="Eki-wm-jKV" id="UKs-Db-KmJ"/>
+                        <outlet property="muptiybutton" destination="ESn-Fy-T2e" id="4KG-Zm-K9M"/>
+                        <outlet property="plusbutton" destination="b11-ZN-uoV" id="OXr-Cb-KpM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
