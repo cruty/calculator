@@ -22,59 +22,17 @@ class ViewController: UIViewController {
     }
     
     var plusButtonSelected: Bool {
-        get {
-            return plusbutton.isSelected
-        }
-        set {
-            self.plusbutton.isSelected = newValue
-            if self.plusbutton.isSelected {
-                plusbutton.backgroundColor = .white
-            } else {
-                plusbutton.backgroundColor = .orange
-            }
-        }
+    
     }
     
     var minusButtonSelected: Bool {
-        get {
-            return minusbutton.isSelected
-        }
-        set {
-            self.minusbutton.isSelected = newValue
-            if self.minusbutton.isSelected {
-                minusbutton.backgroundColor = .white
-            } else {
-                minusbutton.backgroundColor = .orange
-            }
-        }
+
     }
     
     var multipiybuttonSelected: Bool {
-        get {
-            return muptiybutton.isSelected
-        }
-        set {
-            self.muptiybutton.isSelected = newValue
-            if self.muptiybutton.isSelected {
-                muptiybutton.backgroundColor = .white
-            } else {
-                muptiybutton.backgroundColor = .orange
-            }
-        }
     }
     
     var dividebuttonSelected: Bool {
-        get {
-            return dividebutton.isSelected
-        }
-        set {
-            self.dividebutton.isSelected = newValue
-            if self.dividebutton.isSelected {
-                dividebutton.backgroundColor = .white
-            } else {
-                dividebutton.backgroundColor = .orange
-            }
-        }
     }
     
     @IBOutlet weak var label: UILabel!
@@ -95,12 +53,6 @@ class ViewController: UIViewController {
     
     @IBAction func tapACbutton(_ sender: Any) {
         label.text = "0"
-        self.multipiybuttonSelected = false
-        self.minusButtonSelected = false
-        self.plusButtonSelected = false
-        self.dividebuttonSelected = false
-        
-        self.action = nil
     }
     @IBAction func tap1Cbutton(_ sender: Any) {
         
@@ -186,48 +138,19 @@ class ViewController: UIViewController {
     }
     
     @IBAction func divideAction(_ sender: Any) {
-        self.multipiybuttonSelected = false
-        self.minusButtonSelected = false
-        self.plusButtonSelected = false
-        self.dividebuttonSelected = true
-        
-        self.action = .divide
-        self.a = Float(self.label.text!)!
-        self.label.text = "0"
+     
     }
     
     @IBAction func multiptleaction(_ sender: Any) {
-        self.plusButtonSelected = false
-        self.minusButtonSelected = false
-        self.dividebuttonSelected = false
-        self.multipiybuttonSelected = true
-        
-        self.action = .multiply
-        self.a = Float(self.label.text!)!
-        self.label.text = "0"
+
     }
     
     @IBAction func minusaction(_ sender: Any) {
-        self.plusButtonSelected = false
-        self.minusButtonSelected = true
-        self.dividebuttonSelected = false
-        self.multipiybuttonSelected = false
-        
-        self.action = .minus
-        self.a = Float(self.label.text!)!
-        self.label.text = "0"
   
     }
     
     @IBAction func addaction(_ sender: Any) {
-        self.plusButtonSelected = true
-        self.minusButtonSelected = false
-        self.dividebuttonSelected = false
-        self.multipiybuttonSelected = false
-        
-        self.action = .plus
-        self.a = Float(self.label.text!)!
-        self.label.text = "0"
+
     }
     
     @IBAction func equalaction(_ sender: Any) {
